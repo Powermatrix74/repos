@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Alina_HelloWorld.Forms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace Alina_HelloWorld
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AlinaForm());
+            Application.Run(new PhotoDatabaseDialog());
         }
     }
 }
