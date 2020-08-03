@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using WebApplication1.Models;
+using MyWebAppGit.Models;
 
 namespace WebApplication1.Controllers
 {
@@ -27,6 +27,29 @@ namespace WebApplication1.Controllers
         {
             return View();
         }
+
+        [HttpGet]
+        public IActionResult PictureOverview()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult PictureOverview(PictureInformation result)
+        {
+            if (result != null)
+            {
+                try
+                {
+                    PictureDatabaseContext context = new PictureDatabaseContext();
+                    context.Add(result);
+                    context.SaveChanges(true);
+                }
+                catch { }
+            }
+            return View();
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

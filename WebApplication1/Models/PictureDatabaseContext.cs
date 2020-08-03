@@ -30,7 +30,15 @@ namespace MyWebAppGit.Models
         {
             modelBuilder.Entity<PictureInformation>(entity =>
             {
+                entity.HasIndex(e => e.PicturePath)
+                    .HasName("i1")
+                    .IsUnique();
+
                 entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.DateAdded).HasColumnName("Date Added");
+
+                entity.Property(e => e.DateModified).HasColumnName("Date modified");
 
                 entity.Property(e => e.PicturePath)
                     .IsRequired()
