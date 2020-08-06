@@ -15,6 +15,7 @@ namespace MyWebAppGit.Models
         {
         }
 
+        public virtual DbSet<Log> Log { get; set; }
         public virtual DbSet<PictureInformation> PictureInformation { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -28,6 +29,23 @@ namespace MyWebAppGit.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Log>(entity =>
+            {
+                entity.Property(e => e.LogDateTime)
+                    .HasColumnType("datetime")
+                    .HasComputedColumnSql("(getdate())");
+
+                entity.Property(e => e.LogText)
+                    .IsRequired()
+                    .HasMaxLength(500);
+
+                entity.HasOne(d => d.PictureReference)
+                    .WithMany(p => p.Log)
+                    .HasForeignKey(d => d.PictureReferenceId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Log_PictureInformation");
+            });
+
             modelBuilder.Entity<PictureInformation>(entity =>
             {
                 entity.HasIndex(e => e.PicturePath)
