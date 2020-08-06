@@ -4,6 +4,8 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using MyWebAppGit.Models;
 
@@ -12,9 +14,11 @@ namespace WebApplication1.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IConfiguration _configuration;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IConfiguration configuration)
         {
+            _configuration = configuration;
             _logger = logger;
         }
 
@@ -41,9 +45,15 @@ namespace WebApplication1.Controllers
             {
                 try
                 {
-                    PictureDatabaseContext context = new PictureDatabaseContext();
-                    context.Add(result);
-                    context.SaveChanges(true);
+                    var optionsBuilder = new DbContextOptionsBuilder<PictureDatabaseContext>();
+                    optionsBuilder.UseSqlServer(_configuration.GetConnectionString("PictureDatabase"));
+
+                    using (PictureDatabaseContext context = new PictureDatabaseContext(optionsBuilder.Options))
+                    {
+
+                        context.Add(result);
+                        context.SaveChanges(true);
+                    }
                 }
                 catch { }
             }
