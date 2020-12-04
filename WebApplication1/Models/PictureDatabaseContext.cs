@@ -1,7 +1,6 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.Extensions.Configuration;
 
 namespace MyWebAppGit.Models
 {
@@ -21,6 +20,10 @@ namespace MyWebAppGit.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            if (!optionsBuilder.IsConfigured)
+            {
+                //removed
+            }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

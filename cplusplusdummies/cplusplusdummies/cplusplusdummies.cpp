@@ -2,10 +2,15 @@
 //
 
 #include <iostream>
+//#include <string.h>
+#include <string>
 
 int main()
 {
     std::cout << "Hello World!\n";
+    std::string teststring = "tadaa";
+    std::cout << teststring << std::endl;
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
