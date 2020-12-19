@@ -1,0 +1,13 @@
+C:\Users\Kay\source\repos\RechnenAlina\bin\Debug\netcoreapp3.1\RechnenAlina.exe
+C:\Users\Kay\source\repos\RechnenAlina\bin\Debug\netcoreapp3.1\RechnenAlina.deps.json
+C:\Users\Kay\source\repos\RechnenAlina\bin\Debug\netcoreapp3.1\RechnenAlina.runtimeconfig.json
+C:\Users\Kay\source\repos\RechnenAlina\bin\Debug\netcoreapp3.1\RechnenAlina.runtimeconfig.dev.json
+C:\Users\Kay\source\repos\RechnenAlina\bin\Debug\netcoreapp3.1\RechnenAlina.dll
+C:\Users\Kay\source\repos\RechnenAlina\bin\Debug\netcoreapp3.1\RechnenAlina.pdb
+C:\Users\Kay\source\repos\RechnenAlina\obj\Debug\netcoreapp3.1\RechnenAlina.csprojAssemblyReference.cache
+C:\Users\Kay\source\repos\RechnenAlina\obj\Debug\netcoreapp3.1\RechnenAlina.AssemblyInfoInputs.cache
+C:\Users\Kay\source\repos\RechnenAlina\obj\Debug\netcoreapp3.1\RechnenAlina.AssemblyInfo.cs
+C:\Users\Kay\source\repos\RechnenAlina\obj\Debug\netcoreapp3.1\RechnenAlina.csproj.CoreCompileInputs.cache
+C:\Users\Kay\source\repos\RechnenAlina\obj\Debug\netcoreapp3.1\RechnenAlina.dll
+C:\Users\Kay\source\repos\RechnenAlina\obj\Debug\netcoreapp3.1\RechnenAlina.pdb
+C:\Users\Kay\source\repos\RechnenAlina\obj\Debug\netcoreapp3.1\RechnenAlina.genruntimeconfig.cache
